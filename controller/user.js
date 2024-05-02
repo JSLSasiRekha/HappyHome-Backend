@@ -11,15 +11,14 @@ const sendMail = require("../utils/sendMail");
 const sendToken = require("../utils/jwtToken");
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
 const multer = require("multer");
-const redis = require("redis");
-const client = redis.createClient();
+
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage }).single("avatar");
 
 // create user
 router.post("/create-user", upload, async (req, res, next) => {
   try {
-    const { name, email, password, country, state, city } = req.body;
+    const { name, email, password,country,state,city } = req.body;
     const b64 = Buffer.from(req.file.buffer).toString("base64");
     let avatar = "data:" + req.file.mimetype + ";base64," + b64;
 
@@ -50,23 +49,23 @@ router.post("/create-user", upload, async (req, res, next) => {
 
     const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 
-    await sendMail({
-      email: user.email,
-      subject: "Activate your account",
-      message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
-    });
-
-    res.status(201).json({
-      success: true,
-      message: `Please check your email (${user.email}) to activate your account!`,
-    });
+    try {
+      await sendMail({
+        email: user.email,
+        subject: "Activate your account",
+        message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+      });
+      res.status(201).json({
+        success: true,
+        message: `please check your email:- ${user.email} to activate your account!`,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
   } catch (error) {
-    next(new ErrorHandler(error.message, error.status || 500));
+    return next(new ErrorHandler(error.message, 400));
   }
 });
-
-
-
 
 // create activation token
 const createActivationToken = (user) => {
@@ -145,6 +144,10 @@ router.post(
     }
   })
 );
+
+// load user
+// getting error flagged for check
+
 // load user
 router.get(
   "/getuser",
