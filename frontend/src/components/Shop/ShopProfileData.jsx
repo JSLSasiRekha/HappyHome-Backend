@@ -24,9 +24,9 @@ const ShopProfileData = ({ isOwner }) => {
     products && products.map((product) => product.reviews).flat();
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#dbeafe] pb-56 ">
       <div className="flex w-full items-center justify-between">
-        <div className="w-full flex  bg-[#1e3a8a] py-4 pl-4 -mx-8 -my-6">
+        <div className="w-full flex  bg-[#1e3a8a] py-3 pl-4 -mx-8 -my-6">
           <div className="flex items-center" onClick={() => setActive(1)}>
             <h5
               className={`font-[600] text-[20px] ${
@@ -55,17 +55,18 @@ const ShopProfileData = ({ isOwner }) => {
               Shop Reviews
             </h5>
           </div>
-        </div>
+       
         <div>
           {isOwner && (
             <div>
               <Link to="/dashboard">
-                <div className={`${styles.button} !rounded-[4px] h-[42px]`}>
-                  <span className="text-[#fff]">Go Dashboard</span>
+                <div className={`${styles.button} !rounded-[4px] h-[44px]`}>
+                  <span className="text-[#fff] ">Go Dashboard</span>
                 </div>
               </Link>
             </div>
           )}
+        </div>
         </div>
       </div>
 
@@ -101,7 +102,7 @@ const ShopProfileData = ({ isOwner }) => {
       )}
 
       {active === 3 && (
-        <div className="w-full">
+        <div className="w-full ">
           {allReviews &&
             allReviews.map((item, index) => (
               <div className="w-full flex my-4">

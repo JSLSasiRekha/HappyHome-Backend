@@ -11,7 +11,7 @@ import { HiOutlineReceiptRefund } from "react-icons/hi";
 
 const DashboardSideBar = ({ active }) => {
   return (
-    <div className="w-full h-[90vh] bg-white shadow-sm sticky top-0 left-0 z-10">
+    <div className="w-full h-[88vh] bg-white shadow-sm sticky top-0 left-0 z-10">
       {/* single item */}
       <div className="w-full flex items-center p-4">
         <Link to="/dashboard" className="w-full flex items-center">
@@ -29,7 +29,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/dashboard-orders" className="w-full flex items-center">
           <FiShoppingBag
             size={30}
@@ -45,7 +45,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/dashboard-products" className="w-full flex items-center">
           <FiPackage size={30} color={`${active === 3 ? "crimson" : "#555"}`} />
           <h5
@@ -58,7 +58,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link
           to="/dashboard-create-product"
           className="w-full flex items-center"
@@ -109,7 +109,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div> */}
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link
           to="/dashboard-withdraw-money"
           className="w-full flex items-center"
@@ -128,7 +128,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/dashboard-messages" className="w-full flex items-center">
           <BiMessageSquareDetail
             size={30}
@@ -144,7 +144,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/dashboard-coupouns" className="w-full flex items-center">
           <AiOutlineGift
             size={30}
@@ -160,7 +160,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/dashboard-refunds" className="w-full flex items-center">
           <HiOutlineReceiptRefund
             size={30}
@@ -176,7 +176,7 @@ const DashboardSideBar = ({ active }) => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      <div className="w-full flex items-center p-3">
         <Link to="/settings" className="w-full flex items-center">
           <CiSettings
             size={30}

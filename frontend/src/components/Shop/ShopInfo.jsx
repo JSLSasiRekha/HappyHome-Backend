@@ -48,7 +48,7 @@ const ShopInfo = ({ isOwner }) => {
     isLoading  ? (
       <Loader />
     ) : (
-      <div className="bg-[#1e3a8a] pb-64 h-[150vh]">
+      <div className="bg-[#1e3a8a] -mt-10 pb-60 h-[150vh]">
       <div className="w-full pt-5  bg-white ">
         <div className="w-full flex item-center justify-center">
           <img
@@ -84,7 +84,7 @@ const ShopInfo = ({ isOwner }) => {
         <h4 className="text-white">{data?.createdAt?.slice(0, 10)}</h4>
       </div>
       {isOwner && (
-        <div className="py-3 px-4">
+        <div className=" px-4">
            <Link to="/settings">
            <div className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}>
             <span className="text-white">Edit Shop</span>

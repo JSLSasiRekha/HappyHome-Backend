@@ -1,22 +1,22 @@
-import React from 'react'
-import DashboardHeader from '../../components/Shop/Layout/DashboardHeader'
-import DashboardSideBar from '../../components/Shop/Layout/DashboardSideBar'
+import React from 'react';
+import DashboardHeader from '../../components/Shop/Layout/DashboardHeader';
+import DashboardSideBar from '../../components/Shop/Layout/DashboardSideBar';
 import AllOrders from "../../components/Shop/AllOrders";
 
 const ShopAllOrders = () => {
   return (
-        <div>
-            <DashboardHeader />
-            <div className="flex justify-between w-full bg-blue-100">
-                <div className="w-[80px] 800px:w-[330px]">
-                  <DashboardSideBar active={2} />
-                </div>
-                <div className="w-full justify-center flex">
-                   <AllOrders />
-                </div>
-              </div>
+    <div>
+      <DashboardHeader />
+      <div className="flex">
+        <div className="w-[230px] sticky top-0 h-screen overflow-y-auto">
+          <DashboardSideBar active={2} />
         </div>
-  )
-}
+        <div className="flex-1 overflow-y-auto">
+          <AllOrders />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default ShopAllOrders
+export default ShopAllOrders;
