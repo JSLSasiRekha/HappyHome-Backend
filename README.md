@@ -1,4 +1,4 @@
-@copyright by group 30 2023
+
 You can check live deployed version at -
 [click](https://happyhome-378004.web.app/)
 
