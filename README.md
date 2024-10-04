@@ -40,8 +40,8 @@ To deploy this project run these in frontend and deploy backend seperately
 
 ## Contributors
 
+ - Jsl SasiRekha(S20210010099)
 -  Neelesh Nama( S20210010156)
- - Jsl SasiRekha(S2021001099)
 - Vivek Kumar(S20210010244)
 - Somisetty Ramtej(S20210010211)
 - Prashanth (S2021001084)
